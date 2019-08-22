@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 25
-        versionCode 20171115
-        versionName "v2.2.0"
+        targetSdkVersion 28
+        versionCode 20190807
+        versionName "v2.2.1"
     }
     buildTypes {
         release {
@@ -16,10 +16,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs', '../Pay/libs'
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.google.code.gson:gson:+'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'com.android.support:appcompat-v7:25.1.1'
+    implementation 'com.google.code.gson:gson:+'
 }
