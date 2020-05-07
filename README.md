@@ -11,6 +11,7 @@
 ```
 dependencies {
     implementation 'com.github.toocms-library:TabPay:3.0.0.200507-rc'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
 ```
 ## 集成方法
