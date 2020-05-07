@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    api(name: 'alipaySdk-15.7.5-20200422171636-noUtdid', ext: 'aar')
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:${configs.version_wechat}"
     implementation "com.google.code.gson:gson:${configs.version_gson}"
 }
