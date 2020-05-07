@@ -1,11 +1,11 @@
-package com.toocms.pay;
+package com.toocms.tab.pay;
 
 import android.app.Activity;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.toocms.pay.listener.PayStatusCallback;
-import com.toocms.pay.modle.PayRequest;
+import com.toocms.tab.pay.listener.PayStatusCallback;
+import com.toocms.tab.pay.modle.PayRequest;
 
 /**
  * 支付封装类

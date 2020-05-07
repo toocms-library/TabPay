@@ -1,4 +1,4 @@
-package com.toocms.pay;
+package com.toocms.tab.pay;
 
 import android.app.Activity;
 import android.util.Log;
@@ -6,7 +6,7 @@ import android.util.Log;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.toocms.pay.modle.PayRequest;
+import com.toocms.tab.pay.modle.PayRequest;
 
 /**
  * 微信支付封装类 <br/>
