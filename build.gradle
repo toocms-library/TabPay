@@ -21,6 +21,9 @@ allprojects {
             url "https://jitpack.io"
             credentials { username authToken }
         }
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
