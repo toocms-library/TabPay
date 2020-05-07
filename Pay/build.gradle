@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion configs.compileSdkVersion
+    buildToolsVersion configs.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
-        versionCode 20190807
-        versionName "v2.2.1"
+        minSdkVersion configs.minSdkVersion
+        targetSdkVersion configs.targetSdkVersion
+        versionCode configs.versionCode
+        versionName configs.versionName
     }
     buildTypes {
         release {
@@ -19,14 +19,13 @@ android {
 
     repositories {
         flatDir {
-            dirs 'libs', '../Pay/libs'
+            dirs 'libs'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
-    implementation 'com.android.support:appcompat-v7:25.1.1'
-    implementation 'com.google.code.gson:gson:+'
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:${configs.version_wechat}"
+    implementation "com.google.code.gson:gson:${configs.version_gson}"
 }
