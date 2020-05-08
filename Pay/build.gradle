@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.kezong.fat-aar'
 
 android {
     compileSdkVersion configs.compileSdkVersion
@@ -18,8 +19,33 @@ android {
     }
 }
 
+configurations.embed.transitive = true
+
 dependencies {
-    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    embed fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     implementation "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:${configs.version_wechat}"
     implementation "com.google.code.gson:gson:${configs.version_gson}"
+}
+
+//生成文档注释
+task androidJavadocs(type: Javadoc) {
+    failOnError = false
+    source = android.sourceSets.main.java.srcDirs
+    ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+    classpath += files(ext.androidJar)
+}
+//将文档打包成jar
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+// 源代码一起打包
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+//包含文档和源码的aar
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
 }
