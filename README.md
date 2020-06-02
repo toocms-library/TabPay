@@ -10,7 +10,7 @@
 - 在模块目录下的build.gradle文件的dependencies添加
 ```
 dependencies {
-    implementation 'com.github.toocms-library:TabPay:3.0.0.200507-rc'
+    implementation 'com.github.toocms-library:TabPay:3.0.0.200602-rc'
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
 ```
@@ -44,15 +44,15 @@ private void cardPay(String url, int payment) {
 ```
 - 在onResume中调用Pay.payStatusCallback()方法
 ```
- @Override
- protected void onResume() {
-     super.onResume();
-     Pay.payStatusCallback(new PayStatusCallback() {
-         @Override
-         public void callback() {
-             // 调用检测支付状态接口
+@Override
+protected void onResume() {
+    super.onResume();
+    Pay.payStatusCallback(new PayStatusCallback() {
+        @Override
+        public void callback() {
+            // 调用检测支付状态接口
 
-         }
-     });
- }
+        }
+    });
+}
 ```
