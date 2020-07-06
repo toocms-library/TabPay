@@ -4,13 +4,13 @@
 
 # TabPay框架集成文档
 
-![Support](https://img.shields.io/badge/API-19+-4BC51D.svg)&#160;&#160;&#160;&#160;&#160;[![TAS Update](https://img.shields.io/badge/更新-记录-4BC51D.svg)](https://github.com/toocms-library/TooCMSAndroidPay/releases)&#160;&#160;&#160;&#160;&#160;![Author](https://img.shields.io/badge/Author-Zero-4BC51D.svg)
+[![](https://jitpack.io/v/toocms-library/TabPay.svg)](https://jitpack.io/#toocms-library/TabPay)&#160;&#160;&#160;&#160;&#160;![Support](https://img.shields.io/badge/API-19+-4BC51D.svg)&#160;&#160;&#160;&#160;&#160;[![TAS Update](https://img.shields.io/badge/更新-记录-4BC51D.svg)](https://github.com/toocms-library/TooCMSAndroidPay/releases)&#160;&#160;&#160;&#160;&#160;![Author](https://img.shields.io/badge/Author-Zero-4BC51D.svg)
 
 ## 添加Gradle依赖
 - 在模块目录下的build.gradle文件的dependencies添加
 ```
 dependencies {
-    implementation 'com.github.toocms-library:TabPay:3.0.0.200602-rc'
+    implementation 'com.github.toocms-library:TabPay:3.1.0'
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
 ```
