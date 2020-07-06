@@ -14,7 +14,7 @@ import com.toocms.tab.ui.BaseActivity;
  * @author Zero
  * @date 2016/5/21 10:41
  */
-public class Pay {
+public class TabPay {
 
     static final int ALIPAY = 0x123; // 支付宝支付标识
     static final int WXPAY = 0x456; // 微信支付标识
