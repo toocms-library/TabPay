@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.toocms.tab.pay.listener.PayStatusCallback;
 import com.toocms.tab.pay.modle.PayRequest;
+import com.toocms.tab.ui.BaseActivity;
 
 /**
  * 支付封装类
@@ -38,7 +39,11 @@ public class Pay {
             isPayState = true;
             new AliPay(activity, payRequest).pay();
         } else {
-            Toast.makeText(activity, "暂不支持的支付方式", Toast.LENGTH_SHORT).show();
+            if (activity instanceof BaseActivity) {
+                ((BaseActivity) activity).showToast("暂不支持的支付方式");
+            } else {
+                Toast.makeText(activity, "暂不支持的支付方式", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
