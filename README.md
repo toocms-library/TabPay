@@ -4,7 +4,7 @@
 
 # TabPay框架集成文档
 
-[![](https://jitpack.io/v/toocms-library/TabPay.svg)](https://jitpack.io/#toocms-library/TabPay)&#160;&#160;&#160;&#160;&#160;![Support](https://img.shields.io/badge/API-19+-4BC51D.svg)&#160;&#160;&#160;&#160;&#160;[![TAS Update](https://img.shields.io/badge/更新-记录-4BC51D.svg)](https://github.com/toocms-library/TooCMSAndroidPay/releases)&#160;&#160;&#160;&#160;&#160;![Author](https://img.shields.io/badge/Author-Zero-4BC51D.svg)
+[![Jitpack](https://jitpack.io/v/toocms-library/TabPay.svg)](https://jitpack.io/#toocms-library/TabPay)&#160;&#160;&#160;&#160;&#160;![Support](https://img.shields.io/badge/API-19+-4BC51D.svg)&#160;&#160;&#160;&#160;&#160;[![TabPay Update](https://img.shields.io/badge/更新-记录-4BC51D.svg)](https://github.com/toocms-library/TooCMSAndroidPay/releases)&#160;&#160;&#160;&#160;&#160;![Author](https://img.shields.io/badge/Author-Zero-4BC51D.svg)
 
 ## 添加Gradle依赖
 - 在模块目录下的build.gradle文件的dependencies添加
@@ -16,7 +16,7 @@ dependencies {
 ```
 ## 集成方法
 - 请求获取支付宝或微信支付签名的接口（后台提供）
-- 在onComplete中调用Pay.pay()方法
+- 在onComplete中调用TabPay.pay()方法
 ```
 /**
  * 获取支付信息接口
@@ -37,7 +37,7 @@ private void cardPay(String url, int payment) {
         @Override
         public void onComplete(TooCMSResponse<PayRequest> data, Call call, Response response) {
             // 根据返回签名调起支付
-            Pay.pay(PayAty.this, data.getData());
+            TabPay.pay(PayAty.this, data.getData());
         }
     });
 }
@@ -47,7 +47,7 @@ private void cardPay(String url, int payment) {
 @Override
 protected void onResume() {
     super.onResume();
-    Pay.payStatusCallback(new PayStatusCallback() {
+    TabPay.payStatusCallback(new PayStatusCallback() {
         @Override
         public void callback() {
             // 调用检测支付状态接口
