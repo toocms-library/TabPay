@@ -8,6 +8,16 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
+    <!-- Android11适配 -->
+    <queries>
+        <!-- 指定支付宝包名 -->
+        <package android:name="com.eg.android.AlipayGphone" />
+        <!-- AlipayHK -->
+        <package android:name="hk.alipay.wallet" />
+        <!-- 指定微信包名 -->
+        <package android:name="com.tencent.mm" />
+    </queries>
+
     <application>
         <uses-library
             android:name="org.apache.http.legacy"
@@ -16,31 +26,34 @@
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:exported="false"></activity>
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.alipay.sdk.app.H5AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:exported="false"></activity>
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.alipay.sdk.app.PayResultActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="true"
             android:launchMode="singleInstance"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.alipay.sdk.app.AlipayResultActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.alipay.sdk.app.H5OpenAuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.app.APayEntranceActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 </manifest>

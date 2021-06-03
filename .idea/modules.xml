@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Pay/Pay.iml" filepath="$PROJECT_DIR$/Pay/Pay.iml" group="TabPay/Pay" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/TabPay.iml" filepath="$PROJECT_DIR$/.idea/TabPay.iml" group="TabPay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TabPay.iml" filepath="$PROJECT_DIR$/.idea/TabPay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pay/TabPay.Pay.iml" filepath="$PROJECT_DIR$/.idea/modules/Pay/TabPay.Pay.iml" />
     </modules>
   </component>
 </project>

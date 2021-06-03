@@ -4,8 +4,8 @@ ext {
             buildToolsVersion: "29.0.2",
             minSdkVersion    : 19,
             targetSdkVersion : 29,
-            versionCode      : 20200706,
-            versionName      : "3.1.0",
+            versionCode      : 20210603,
+            versionName      : "3.2.0",
 
             //open version control
             version_tab      : "latest.release",
